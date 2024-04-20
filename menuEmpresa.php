@@ -9,8 +9,8 @@
 
     //print_r($id);
 
-    $sentencia = $bd -> query("SELECT * FROM productos WHERE id_usuario='$id';");
-    $sentencia2 = $bd -> query("SELECT * FROM usuarios WHERE id_usuario='$id';");
+    $sentencia = $bd -> query("SELECT * FROM productos WHERE idUser='$id';");
+    $sentencia2 = $bd -> query("SELECT * FROM users WHERE idUser='$id';");
     //$sentencia = $bd -> query("SELECT * FROM productos WHERE id_usuarios= '';");
     $product = $sentencia->fetchAll(PDO::FETCH_OBJ);
     $users = $sentencia2->fetchAll(PDO::FETCH_OBJ);
@@ -72,7 +72,7 @@
     <?php
       foreach($users as $name){
     ?>
-  <h1 class="reducir-h1 text-center mt-5 pt-5">¡Bienvenido <?php echo $name->nombre;?>!</h1> 
+  <h1 class="reducir-h1 text-center mt-5 pt-5">¡Bienvenido <?php echo $name->companyName;?>!</h1> 
   <?php
         }
       ?>
@@ -224,13 +224,13 @@
               foreach($product as $dato){
             ?>
             <tr>
-              <td scope="row" ><?php echo $dato->id_producto;?></td>
-              <td><?php echo $dato->nombre_producto;?></td>
-              <td><?php echo $dato->descripcion_producto;?></td>
-              <td><p>$<?php echo $dato->precio_producto;?></p></td>
-              <td><img src="uploads/<?php echo $dato->foto_producto;?>" width="120px"></td>
-              <td><a href="editarProducto_Empresa.php?idProducto=<?php echo $dato->id_producto;?>"><i class="fas fa-solid fa-pen" data-toggle="tooltip" data-placement="right" title="Editar" style="font-size: 20px; color: var(--bs-orange-2);"></i></a></td>
-              <td><a onclick="return confirm('¿Estas seguro de eliminar?');" href="/php/deleteProceso.php?idProducto=<?php echo $dato->id_producto;?>"><i class="fas fa-solid fa-trash" style="font-size: 20px; color: var(--bs-orange-2);" data-toggle="tooltip" data-placement="right" title="Eliminar"></i></a></td>
+              <td scope="row" ><?php echo $dato->idProduct;?></td>
+              <td><?php echo $dato->nameProduct;?></td>
+              <td><?php echo $dato->descriptionProduct;?></td>
+              <td><p>$<?php echo $dato->priceProduct;?></p></td>
+              <td><img src="uploads/<?php echo $dato->photoProduct;?>" width="120px"></td>
+              <td><a href="editarProducto_Empresa.php?idProducto=<?php echo $dato->idProduct;?>"><i class="fas fa-solid fa-pen" data-toggle="tooltip" data-placement="right" title="Editar" style="font-size: 20px; color: var(--bs-orange-2);"></i></a></td>
+              <td><a onclick="return confirm('¿Estas seguro de eliminar?');" href="/php/deleteProceso.php?idProducto=<?php echo $dato->idProduct;?>"><i class="fas fa-solid fa-trash" style="font-size: 20px; color: var(--bs-orange-2);" data-toggle="tooltip" data-placement="right" title="Eliminar"></i></a></td>
             </tr>
             <?php
               }
