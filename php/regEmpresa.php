@@ -10,7 +10,7 @@
 
         //Checa si el correo existe en la bd (NO FUNCIONA)
         $query_check =  $bd->prepare("SELECT * FROM users WHERE `companyMail`=?");
-        $query_check -> execute([$emailCompany]);
+        $query_check -> execute([$emailComp]);
         $user = $query_check->fetch();
 
         //Checa que no mandó formulario vacío
