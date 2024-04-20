@@ -1,8 +1,8 @@
 <?php
-  /*session_start();
+  session_start();
   include_once "php/conexion.php";
-  $sentencia = $bd -> query("SELECT * FROM productos ORDER BY id_producto DESC;");
-  $product = $sentencia->fetchAll(PDO::FETCH_OBJ);*/
+  $sentencia = $bd -> query("SELECT * FROM productos ORDER BY idProduct DESC;");
+  $product = $sentencia->fetchAll(PDO::FETCH_OBJ);
 ?>
 
 <!doctype html>
@@ -105,38 +105,38 @@
   <div class="row">
     <?php
       foreach($product as $dato){
-        $id_user = $dato-> id_usuario;
+        $id_user = $dato-> idUser;
     ?>
     <div class="col-md-4">
       <?php
-          $sentencia2 = $bd -> query("SELECT * FROM usuarios WHERE id_usuario LIKE $id_user;");
+          $sentencia2 = $bd -> query("SELECT * FROM users WHERE idUser LIKE $id_user;");
           $user = $sentencia2->fetchAll(PDO::FETCH_OBJ);
       ?>
       <form action="/php/shoppingProceso.php" method="POST">
         <div class="card shadow  text-center">
-          <img class="card-img-top img-fluid" src="uploads/<?php echo $dato->foto_producto;?>">
+          <img class="card-img-top img-fluid" src="uploads/<?php echo $dato->photoProduct;?>">
           <div class="card-body">
-            <h2 class="card-title text-center"><?php echo $dato->nombre_producto;?></h2>   
-            <p class="card-title text-center"><?php echo $dato->descripcion_producto;?></p>
-            <h3 class="card-title text-center"><p>$<?php echo $dato->precio_producto;?></h3>
+            <h2 class="card-title text-center"><?php echo $dato->nameProduct;?></h2>   
+            <p class="card-title text-center"><?php echo $dato->descriptionProduct;?></p>
+            <h3 class="card-title text-center"><p>$<?php echo $dato->priceProduct;?></h3>
               <?php
                 foreach($user as $datos){
               ?>
                 <button class="accordion btn btn-primary my-3" type ="button">Información del vendedor <i class="fas fa-caret-down"></i></button>
                   <div class="panel-collapse collapse">
-                    <h5>Vendedor: <?php echo $datos->nombre;?></h5>
-                    <h5>Dirección: <?php echo $datos->ubicacion;?></h5>
-                    <h5>Correo: <?php echo $datos->correo;?></h5>
-                    <h5>Teléfono: <?php echo $datos->telefono;?></h5>
+                    <h5>Vendedor: <?php echo $datos->companyName;?></h5>
+                    <h5>Dirección: <?php echo $datos->companyDire;?></h5>
+                    <h5>Correo: <?php echo $datos->companyName;?></h5>
+                    <h5>Teléfono: <?php echo $datos->companyPhone;?></h5>
                   </div>
               <?php
                 }
               ?>
                 <button class="btn btn-warning my-3" type="submit" name="add_to_cart">Agregar al carrito<i class="fas fa-shopping-cart"></i></button>
-                <input type="hidden" name="nombre_producto" value="<?php echo $dato->nombre_producto;?>">
-                <input type="hidden" name="precio_producto" value="<?php echo $dato->precio_producto;?>">
-                <input type="hidden" name="imagen_producto" value="<?php echo $dato->foto_producto;?>">
-                <input type="hidden" name="ubicacion_producto" value="<?php echo $datos->ubicacion;?>">
+                <input type="hidden" name="nombre_producto" value="<?php echo $dato->nameProduct;?>">
+                <input type="hidden" name="precio_producto" value="<?php echo $dato->priceProduct;?>">
+                <input type="hidden" name="imagen_producto" value="<?php echo $dato->photoProduct;?>">
+                <input type="hidden" name="ubicacion_producto" value="<?php echo $datos->companyDire;?>">
             </div>
           </div>
         </form>
