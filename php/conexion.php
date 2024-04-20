@@ -6,10 +6,10 @@ $host = "localhost";
 $db_name = "u470394636_rol";
 $errors = array();*/
 
-$db_username = "id20564270_foodchiida_root";
-$db_password = "victor98A@";
+$db_username = "id22064910_admin";
+$db_password = "victor98A#";
 $host = "localhost";
-$db_name = "id20564270_foodchiida_db";
+$db_name = "id22064910_db_foodchiida";
 $errors = array();
 
 try{
