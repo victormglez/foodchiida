@@ -19,7 +19,7 @@
             //print_r($datos);
 
             if ($datos === FALSE){
-                header('Location: ../php/login.php?mensaje=error');
+                header('Location: ../login.php?mensaje=error');
                 exit();
             } elseif($sentencia->rowCount()==1){
                 $_SESSION['id'] = $datos->idUser;
