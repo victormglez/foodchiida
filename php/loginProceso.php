@@ -11,7 +11,7 @@
             exit();
         } else {
             $passComp = md5($passComp);
-            $sentencia = $bd->prepare("SELECT * FROM usuarios WHERE correo=:emailCompany and pass1=:passCompany;");
+            $sentencia = $bd->prepare("SELECT * FROM users WHERE companyMail=:emailCompany and companyPass=:passCompany;");
             $sentencia->bindValue(':emailCompany',$emailComp);
             $sentencia->bindValue(':passCompany',$passComp);
             $sentencia ->execute();
