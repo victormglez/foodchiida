@@ -19,10 +19,10 @@
             //print_r($datos);
 
             if ($datos === FALSE){
-                header('Location: ../login.php?mensaje=error');
+                header('Location: ../php/login.php?mensaje=error');
                 exit();
             } elseif($sentencia->rowCount()==1){
-                $_SESSION['id'] = $datos->id_usuario;
+                $_SESSION['id'] = $datos->idUser;
                 //$_SESSION['id'] = $datos->id_user;
                 header('Location: ../menuEmpresa.php');
             }
