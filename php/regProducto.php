@@ -50,7 +50,7 @@
 
 
         //Sentencia 
-        $sentencia = $bd->prepare("INSERT INTO productos (`nombre_producto`, `descripcion_producto`, `precio_producto`, `foto_producto`, `id_usuario`) VALUES (:nameProducto,:descrProducto,:priceProducto,:imgProducto,$id);");
+        $sentencia = $bd->prepare("INSERT INTO productos (`nameProduct`, `descriptionProduct`, `priceProduct`, `photoProduct`, `idUser`) VALUES (:nameProducto,:descrProducto,:priceProducto,:imgProducto,$id);");
         $sentencia->bindValue(':nameProducto',$nameProd,PDO::PARAM_STR);
         $sentencia->bindValue(':descrProducto',$descPro,PDO::PARAM_STR);
         $sentencia->bindValue(':priceProducto',$pricePro,PDO::PARAM_STR);

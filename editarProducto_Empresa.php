@@ -10,7 +10,7 @@
   }elseif(isset($_SESSION['id'])){
     include_once 'php/conexion.php';
     $idProducto = $_GET['idProducto'];
-    $sentencia = $bd ->prepare("SELECT * FROM productos WHERE id_producto = ?;");
+    $sentencia = $bd ->prepare("SELECT * FROM productos WHERE idProduct = ?;");
     $sentencia->execute([$idProducto]);
     $product = $sentencia->fetch(PDO::FETCH_OBJ);
     //print_r($product);
@@ -105,23 +105,23 @@
         <form action="/php/editProceso.php" class="container-form row g-3 mt-4 justify-content-center" method="post" enctype="multipart/form-data">
           <div class="col-md-10">
             <label class="form-label">Nombre Producto</label>
-            <input type="text" id="nameProducto" name="nameProducto" class="form-control" placeholder="Nombre Producto" required value="<?php echo $product->nombre_producto;?>">
+            <input type="text" id="nameProducto" name="nameProducto" class="form-control" placeholder="Nombre Producto" required value="<?php echo $product->nameProduct;?>">
           </div>
           <div class="col-md-10">
             <label class="form-label">Descripción</label>
-            <input type = "text" id="descrProducto" name="descrProducto" class="form-control" cols="10" rows="3" required value="<?php echo $product->descripcion_producto;?>">
+            <input type = "text" id="descrProducto" name="descrProducto" class="form-control" cols="10" rows="3" required value="<?php echo $product->descriptionProduct;?>">
           </div>
           <div class="col-md-10">
             <label class="form-label">Precio</label>
-            <input type="number" min="0.00" max="10000.00" step="0.01" id="priceProducto" name="priceProducto" class="form-control" placeholder="0.00" required value="<?php echo $product->precio_producto;?>">
+            <input type="number" min="0.00" max="10000.00" step="0.01" id="priceProducto" name="priceProducto" class="form-control" placeholder="0.00" required value="<?php echo $product->priceProduct;?>">
           </div>
           <div class="col-md-10">
             <label class="form-label">Imagen</label>
             <br>
-            <input type="file" id="imgProducto" name="imgProducto" class="form-control-file" accept="image/png, image/jpg, image/jpeg" required value="<?php echo $product->foto_producto;?>">
+            <input type="file" id="imgProducto" name="imgProducto" class="form-control-file" accept="image/png, image/jpg, image/jpeg" required value="<?php echo $product->photoProduct;?>">
           </div>
           <div class="col-md-3 text-center">
-            <input type="hidden" name="idProducto" value="<?php echo $product->id_producto;?>"> 
+            <input type="hidden" name="idProducto" value="<?php echo $product->idProduct;?>"> 
             <button type="submit" class="btn-form-producto btn-lg" id="btn_edit_producto" name="btn_edit_producto">Editar producto</button>
             <button type="button" class="btn-form-producto btn-lg" id="btn_edit_producto" name="btn_edit_producto" onclick="location.href='../menuEmpresa.php';">Cancelar</button>
           </div>

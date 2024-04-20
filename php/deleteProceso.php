@@ -9,7 +9,7 @@
 
     $idProduct = $_GET['idProducto'];
 
-    $sentencia = $bd->prepare("DELETE FROM productos WHERE id_producto = ?;");
+    $sentencia = $bd->prepare("DELETE FROM productos WHERE idProduct = ?;");
     $resultado = $sentencia->execute([$idProduct]);
 
     if($resultado === TRUE){

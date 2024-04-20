@@ -1,6 +1,6 @@
 <?php
     print_r($_POST);
-   if(!isset($_POST['idProducto'])){
+    if(!isset($_POST['idProducto'])){
         header('Location: ../menuEmpresa.php?mensaje=error');
         exit();
     }
@@ -43,7 +43,7 @@
             exit();
         }
 
-        $sentencia = $bd->prepare("UPDATE productos SET nombre_producto=:nameProducto, descripcion_producto=:descrProducto, precio_producto=:priceProducto, foto_producto=:imgProducto WHERE id_producto=:idProducto;");
+        $sentencia = $bd->prepare("UPDATE productos SET nameProduct=:nameProducto, descriptionProduct=:descrProducto, priceProduct=:priceProducto, photoProduct=:imgProducto WHERE idProduct=:idProducto;");
         $sentencia->bindValue(':idProducto',$idProducto,PDO::PARAM_STR);
         $sentencia->bindValue(':nameProducto',$nameProd,PDO::PARAM_STR);
         $sentencia->bindValue(':descrProducto',$descPro,PDO::PARAM_STR);
