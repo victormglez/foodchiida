@@ -5,6 +5,8 @@ use JetBrains\PhpStorm\ArrayShape;
     session_start();
     include_once 'conexion.php';
 
+    $count = 0;
+
     if(isset($_POST['add_to_cart'])){
         if(isset($_SESSION['cart'])){
             $myitems = array_column($_SESSION['cart'],'nombre_producto');
