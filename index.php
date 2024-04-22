@@ -126,7 +126,7 @@
                   <div class="panel-collapse collapse">
                     <h5>Vendedor: <?php echo $datos->companyName;?></h5>
                     <h5>Dirección: <?php echo $datos->companyDire;?></h5>
-                    <h5>Correo: <?php echo $datos->companyName;?></h5>
+                    <h5>Correo: <?php echo $datos->companyMail;?></h5>
                     <h5>Teléfono: <?php echo $datos->companyPhone;?></h5>
                   </div>
               <?php
