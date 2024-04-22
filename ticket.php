@@ -1,12 +1,13 @@
 <?php 
-   session_start();
+   if(session_status() == PHP_SESSION_NONE) {
+      session_start();
+   }
 
    if(!isset($_SESSION['cart'])){
       header('Location: shopping_cart.php');
     } else {
        ob_start();
     }
-
 ?>
 
 <!DOCTYPE html>
