@@ -9,8 +9,8 @@
 
       //print_r($id);
 
-      $sentencia = $bd -> query("SELECT * FROM productos WHERE id_usuario='$id';");
-      $sentencia2 = $bd -> query("SELECT * FROM usuarios WHERE id_usuario='$id';");
+      $sentencia = $bd -> query("SELECT * FROM productos WHERE idUser='$id';");
+      $sentencia2 = $bd -> query("SELECT * FROM users WHERE idUser='$id';");
 
       //$sentencia = $bd -> query("SELECT * FROM productos WHERE id_usuarios= '';");
       $product = $sentencia->fetchAll(PDO::FETCH_OBJ);
