@@ -4,6 +4,7 @@
 
   if(!isset($_SESSION['cart'])){
     header('Location: shopping_cart.php');
+    exit();
   }
 ?>
 

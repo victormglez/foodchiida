@@ -18,19 +18,21 @@
             include_once('conexion.php');
             include_once('shoppingProceso.php');
 
-            ob_start();
+            //Genera el PDF
+            //ob_start();
             $dompdf = new Dompdf();
 
             $options = $dompdf->getOptions();
             $options->set(array('isRemoteEnabled' => true));
             $dompdf->setOptions($options);
-
+    
             $dompdf->loadHtml($html);
             $dompdf->setPaper('A4','landscape'); 
             $dompdf->render();
             $dompdf->stream("ticketApartado.pdf",array("Attachment"=>false));
 
             session_destroy();
+            exit();
         }
     }
 
