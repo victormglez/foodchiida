@@ -1,5 +1,5 @@
 <?php
-    print_r($_POST);
+    //print_r($_POST);
     if(!isset($_POST['idProducto'])){
         header('Location: ../menuEmpresa.php?mensaje=error');
         exit();
@@ -53,6 +53,7 @@
 
         if($resultado === TRUE){
             header('Location: ../menuEmpresa.php?mensaje=editado');
+            exit();
         } else {
             header('Location: ../menuEmpresa.php?mensaje=error-2');
             exit();
