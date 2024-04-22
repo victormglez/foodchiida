@@ -91,7 +91,7 @@
     <?php
         if(isset($_GET['mensaje']) and $_GET['mensaje'] == 'enviado'){
     ?>
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       <strong>¡Gracias!</strong> Tu mensaje ha sido enviado con éxito. 
     </div>
@@ -101,7 +101,7 @@
 
     <!-- fin alerta -->
     <h1 class="contact-h1">CONTÁCTANOS</h1>
-    <form action="https://formsubmit.co/4daa17d7864ee71891bc0d98924451ac" class="container-form row g-3 justify-content-center" method="post" id="myForm" name="FormConctacto">
+    <form action="" class="container-form row g-3 justify-content-center" method="post" id="myForm" name="FormConctacto">
       <!-- Honeypot -->
       <input type="text" name="_honey" style="display: none;">
 
