@@ -1,6 +1,7 @@
 <?php
-  session_start();
-  ob_start();
+  if(session_status() == PHP_SESSION_NONE) {
+    session_start();
+  }
 
   if(!isset($_SESSION['cart'])){
     header('Location: shopping_cart.php');
@@ -94,11 +95,11 @@
 									<td class="product-name"><?php echo $value['nombre_producto'];?></td>
 									<td class="product-price">$<?php echo $value['precio_producto'];?></td>
 								</tr>
-							</tbody>
               <?php
                     }
                   }
               ?>
+              </tbody>
 						</table>
 					</div>
 				</div>

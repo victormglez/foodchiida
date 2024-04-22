@@ -1,8 +1,9 @@
 <?php
-
 use JetBrains\PhpStorm\ArrayShape;
 
-    session_start();
+    if(session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
     include_once 'conexion.php';
 
     $count = 0;
@@ -68,7 +69,4 @@ use JetBrains\PhpStorm\ArrayShape;
             exit();
         }
     }
-
 ?>
-
-

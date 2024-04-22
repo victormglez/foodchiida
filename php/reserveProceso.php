@@ -1,5 +1,8 @@
 <?php
-    session_start();
+    if(session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+
     use Dompdf\Dompdf;
 
     if(isset($_POST['btn_reserve'])){ 
@@ -14,12 +17,12 @@
         } else {
             require_once('../vendor/autoload.php');
             require_once('../dompdf/autoload.inc.php');
-            require_once('../reporte.php');
+            include_once('../reporte.php');
             include_once('conexion.php');
             include_once('shoppingProceso.php');
 
             //Genera el PDF
-            //ob_start();
+            ob_start();
             $dompdf = new Dompdf();
 
             $options = $dompdf->getOptions();
@@ -33,7 +36,7 @@
 
             session_destroy();
             exit();
+            ob_end_flush();
         }
     }
-
 ?>
