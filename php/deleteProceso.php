@@ -15,7 +15,7 @@
     if($resultado === TRUE){
         header('Location: ../menuEmpresa.php?mensaje=eliminado');
     } else {
-        header('Location: ../menuEmpresa.php?mensaje=error');
+        header('Location: ../menuEmpresa.php?mensaje=error-delete');
         exit();
     }
 

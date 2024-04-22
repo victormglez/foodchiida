@@ -179,6 +179,17 @@
         }
       ?>
 
+      <?php
+        if(isset($_GET['mensaje']) and $_GET['mensaje'] == 'error-delete'){
+      ?>
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <strong>¡Error!</strong> No se pudo eliminar el producto.
+      </div>
+      <?php
+        }
+      ?>
+
       <!-- fin alerta -->
       <div class="card">
         <form action="/php/regProducto.php" class="container-form row g-3 mt-4 justify-content-center" method="post" enctype="multipart/form-data">
