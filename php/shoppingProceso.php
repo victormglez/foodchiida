@@ -38,6 +38,7 @@ use JetBrains\PhpStorm\ArrayShape;
                     window.location.href='../shopping_cart.php';
                 </script>";*/
                 header('Location: ../shopping_cart.php?mensaje=eliminado');
+                exit();
             }
         }
     }
@@ -58,9 +59,11 @@ use JetBrains\PhpStorm\ArrayShape;
                 </script>";
             } else {
                 header('Location: ../shopping_cart.php?mensaje=opcion');
+                exit();
             }
         } else {
             header('Location: ../shopping_cart.php?mensaje=vacio');
+            exit();
         }
     }
 
