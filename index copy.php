@@ -170,7 +170,7 @@
 
       <!-- Copyright -->
       <div class="text-center p-3" style="background-color: #ff725e;">
-        © 2022 Copyright;
+      © <?php echo date('Y');?> Copyright;
         <a class="text-white" href="index.php">Foodchiida</a>
       </div>
       <!-- Copyright -->
